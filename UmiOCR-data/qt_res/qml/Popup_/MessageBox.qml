@@ -125,7 +125,7 @@ Rectangle {
                 Button_ {
                     anchors.top: parent.top
                     anchors.bottom: parent.bottom
-                    property string issueUrl: UmiAbout.url.newIssue
+                    property string issueUrl//: UmiAbout.url.newIssue
                     text_: qsTr("问题反馈")
                     toolTip: issueUrl
                     textSize: size_.smallText

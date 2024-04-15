@@ -10,12 +10,13 @@ from ..platform import Platform
 class ShortcutApi:
     @staticmethod  # 获取地址
     def _getPath(position):
-        if position == "desktop":
-            return Qsp.writableLocation(Qsp.DesktopLocation)
-        elif position == "startMenu":
-            return Platform.StandardPaths.GetStartMenu()
-        elif position == "startup":
-            return Platform.StandardPaths.GetStartup()
+        print("233")
+        #if position == "desktop":
+            #return Qsp.writableLocation(Qsp.DesktopLocation)
+        #elif position == "startMenu":
+            #return Platform.StandardPaths.GetStartMenu()
+        #elif position == "startup":
+            #return Platform.StandardPaths.GetStartup()
 
     @staticmethod  # 创建快捷方式，返回成功与否的字符串
     def createShortcut(position):

@@ -11,7 +11,9 @@ class _KeyTranslator:
     # 回调函数的 KeyCode 类型 转为键名字符串
     @staticmethod
     def key2name(key):
-        return Platform.getKeyName(key)
+        print(key)
+        #print("no")
+        #return Platform.getKeyName(key)
 
     # 键名字符串 转为KeyCode
     @staticmethod

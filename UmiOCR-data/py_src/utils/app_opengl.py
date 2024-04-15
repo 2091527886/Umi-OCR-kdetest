@@ -18,10 +18,10 @@ _Opt = ""
 def initOpengl():
     global _Opt
     opt = getOpengl()
-    if opt not in _GLDict:
-        opt = Platform.getOpenGLUse()
-        setOpengl(opt)
-    QGuiApplication.setAttribute(_GLDict[opt], True)
+    #if opt not in _GLDict:
+        #opt = Platform.getOpenGLUse()
+        #setOpengl(opt)
+    QGuiApplication.setAttribute(_GLDict["AA_UseOpenGLES"], True)
     _Opt = opt
 
 

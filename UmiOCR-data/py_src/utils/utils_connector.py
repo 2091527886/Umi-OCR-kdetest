@@ -18,15 +18,17 @@ class UtilsConnector(QObject):
     # 用系统应用打开文件或目录
     @Slot(str)
     def startfile(self, path):
-        Platform.startfile(path)
+        #Platform.startfile(path)
+        print("no")
 
     # 硬件控制
     @Slot(str)
     def hardwareCtrl(self, key):
-        if key == "shutdown":  # 关机
-            Platform.HardwareCtrl.shutdown()
-        elif key == "hibernate":  # 休眠
-            Platform.HardwareCtrl.hibernate()
+        print("233")
+        #if key == "shutdown":  # 关机
+            #Platform.HardwareCtrl.shutdown()
+        #elif key == "hibernate":  # 休眠
+            #Platform.HardwareCtrl.hibernate()
 
     # 传入paths和是否递归，返回合法的图片路径
     @Slot("QVariant", bool, result="QVariant")

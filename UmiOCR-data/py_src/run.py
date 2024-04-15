@@ -64,9 +64,9 @@ def runQml(engineAddImportPath):
 
     # ==================== 2. 启动qt ====================
     qtApp = QGuiApplication(sys.argv)
-    qtApp.setApplicationName(UmiAbout["name"])
-    qtApp.setOrganizationName(UmiAbout["authors"][0]["name"])
-    qtApp.setOrganizationDomain(UmiAbout["url"]["home"])
+    qtApp.setApplicationName("233")
+    qtApp.setOrganizationName("233")
+    qtApp.setOrganizationDomain("233")
 
     # ==================== 3. OpenGlES 兼容性检查 ====================
     app_opengl.checkOpengl()
@@ -123,7 +123,7 @@ def runQml(engineAddImportPath):
     print("###  QML引擎关闭！")
 
 
-def main(app_path, engineAddImportPath=""):
+def main( engineAddImportPath=""):
     """
     `app_path`: 程序入口文件 路径\n
     `engineAddImportPath`: 可选，qml包路径\n
@@ -134,8 +134,8 @@ def main(app_path, engineAddImportPath=""):
     from .utils import pre_configs
     from .server.cmd_client import initCmd
 
-    if not umi_about.init(app_path):  # 初始化版本信息，失败则结束运行
-        sys.exit(0)
+    #if not umi_about.init(app_path):  # 初始化版本信息，失败则结束运行
+    #    sys.exit(0)
     # 安装某些软件时可能在系统中写入 QMLSCENE_DEVICE 环境变量，影响本软件的渲染方式，因此屏蔽该环境变量
     if "QMLSCENE_DEVICE" in os.environ:
         del os.environ["QMLSCENE_DEVICE"]

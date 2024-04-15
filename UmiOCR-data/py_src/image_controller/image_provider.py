@@ -200,7 +200,7 @@ def openImage(path):
             return f"[Error] can't save to temp file: {e}\n{path}"
     # 打开文件
     try:
-        Platform.startfile(path)
+        #Platform.startfile(path)
         return "[Success]"
     except Exception as e:
         return f"[Error] can't open image: {e}\n{path}"

@@ -130,7 +130,7 @@ def _newSend(argv):
         os.MessageBox(msg)
         return
     # 启动进程，传入强制参数，避免递归无限启动进程
-    Platform.runNewProcess(appPath, " --force")
+    #Platform.runNewProcess(appPath, " --force")
     # 等待并检查 服务进程初始化完毕
     for i in range(60):  # 检测轮次
         time.sleep(0.5)  # 每次等待时间

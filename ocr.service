@@ -1,0 +1,14 @@
+[Unit]
+Description=ocr
+After=network-online.target
+
+
+[Service]
+Type=exec
+User=a2091527886
+ExecStart=/home/temp/Umi-OCR-1/ocr.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+

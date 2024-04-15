@@ -4,7 +4,7 @@
 
 from ..image_controller.image_provider import PixmapProvider  # 图片提供器
 from ..utils.utils import findImages
-
+import subprocess
 import time
 from PySide2.QtGui import QGuiApplication, QClipboard, QImage, QPixmap  # 截图 剪贴板
 
@@ -19,15 +19,19 @@ class _ScreenshotControllerClass:
         try:
             grabList = []
             screensList = QGuiApplication.screens()
-            for screen in screensList:
-                pixmap = screen.grabWindow(0)  # 截图
-                imgID = PixmapProvider.addPixmap(pixmap)  # 存入提供器，获取imgID
-                grabList.append(
-                    {
-                        "imgID": imgID,
-                        "screenName": screen.name(),
-                    }
-                )
+            print(screensList)
+            
+            #pixmap = screen.grabWindow(0)  # 截图
+            a = subprocess.Popen("spectacle -n -m -b -o /tmp/tmp.png",stdout=subprocess.PIPE,shell=True,encoding="utf-8")
+            a.wait()
+            pixmap = QPixmap("/tmp/tmp.png")
+            imgID = PixmapProvider.addPixmap(pixmap)  # 存入提供器，获取imgID
+            grabList.append(
+                {
+                    "imgID": imgID,
+                    "screenName": "0",
+                }
+            )
             return grabList
         except Exception as e:
             return [f"[Error] Screenshot: {e}"]

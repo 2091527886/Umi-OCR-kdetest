@@ -1,7 +1,7 @@
 # 负责 pynput 的按键转换
 # 封装 keyTranslator ，负责key、char、vk的转换
 
-from pynput._util.win32 import KeyTranslator
+from pynput._util.xorg import KeyTranslator
 
 
 # ==================== 按键转换器 ====================
